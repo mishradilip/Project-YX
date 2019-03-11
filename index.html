@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Search</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header-wrapper">
+  <div class="container">
+    <div class="flex justify-content-sb align-item-c header-flex">
+      <h1 class="heading">Product listing</h1>
+      <div class="product-filter-block flex">
+        <div class="search-form-block">
+          <input id="myInput" name="myinput" type="search" class="search-control" placeholder="Search the product..." aria-label="Search the product..." onkeyup="productSearch()">
+          <a href="javascript:void(0)" class="btn-search">search</a>
+        </div>
+        <div class="product-sort">
+          <a onclick="toggleSortBy()" href="javascript:void(0)">Sort By: <span> Default</span></a>
+          <ul class="sort-value" id="sortBy" style="display: none;">
+            <li onclick="sortBy('price',true);">Price -- Low to High</li>
+            <li onclick="sortBy('price',false);">Price -- High to Low</li>
+            <li onclick="sortBy('Newest');">Newest First</li>
+            <li onclick="sortBy('Popularity');">Popularity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <ul class="flex product-list-wrapper" id="productList">
+    </ul>
+  </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/data_json.js" type="text/javascript"></script>
+</body>
+</html>
